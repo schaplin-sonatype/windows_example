@@ -33,12 +33,8 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: Nexus IQ for Azure DevOps@0
+- task: NexusIqPipelineTask@1
   inputs:
-    serverUrl: 'https://48298905.ngrok.io'
-    serverUsername: 'admin'
-    serverPassword: 'admin123'
-    applicationId: 'windows'
-    scanDirectory: '%SYSTEM_DEFAULTWORKINGDIRECTORY%'
-    stage: 'build'
-    scanTargets: '**\*.nupkg,**\*.js'
+    nexusIqService: 'Nexus IQ Service Connection'
+    applicationId: 'Web-App'
+    stage: 'Build'
